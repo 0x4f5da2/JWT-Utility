@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com.qunhe.i18n'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "com.auth0:java-jwt:3.3.0"
+    compile 'org.yaml:snakeyaml:1.21'
+    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
+
+
+}
