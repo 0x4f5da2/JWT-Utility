@@ -45,7 +45,7 @@ public class GenerationPanel extends JPanel {
         qScroller.setBounds(25, 150, 425, 200);
         add(qScroller);
 
-        JLabel lblPayload = new JLabel("PAYLOAD");
+        JLabel lblPayload = new JLabel("PAYLOAD(IN YAML FORMAT)");
         lblPayload.setBounds(25, 125, 55, 15);
         add(lblPayload);
 
