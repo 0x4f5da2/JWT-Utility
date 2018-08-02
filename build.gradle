@@ -14,7 +14,16 @@ repositories {
 dependencies {
     compile "com.auth0:java-jwt:3.3.0"
     compile 'org.yaml:snakeyaml:1.21'
-    compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
+    compile 'com.alibaba:fastjson:1.2.47'
+}
 
-
+jar {
+    manifest {
+        attributes "Main-Class": "com.qunhe.i18n.util.jwt.MainGui"
+    }
+    from {
+        configurations.compile.collect {
+            it.isDirectory()?it:zipTree(it)
+        }
+    }
 }

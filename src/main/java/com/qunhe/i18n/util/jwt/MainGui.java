@@ -1,8 +1,6 @@
 package com.qunhe.i18n.util.jwt;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
@@ -53,8 +51,9 @@ public class MainGui extends JFrame {
             if(!checked){
                 JOptionPane.showMessageDialog(null, "TOKEN FORMAT ERROR", "MESSAGE", JOptionPane.ERROR_MESSAGE);
                 return;
+            } else {
+                new ResultGui().setContent(VerificationUtil.getPayload(token)).showResult();
             }
-            JOptionPane.showMessageDialog(null, VerificationUtil.getPayload(token));
         });
 
 
@@ -62,7 +61,11 @@ public class MainGui extends JFrame {
         GenerationPanel generationPanel = new GenerationPanel();
         generationPanel.btnGenerate.addActionListener((e) -> {
             String result = GenerationUtil.generate(generationPanel.payloadTextArea.getText().trim(), generationPanel.secretTextField.getText().trim());
-            System.out.println(result);
+            if(result != null) {
+                new ResultGui().setContent(result).showResult();
+            } else {
+                JOptionPane.showMessageDialog(null, "FAIL, PLEASE CHECK YOUR ENTRY!", "MESSAGE", JOptionPane.ERROR_MESSAGE);
+            }
         });
 
 

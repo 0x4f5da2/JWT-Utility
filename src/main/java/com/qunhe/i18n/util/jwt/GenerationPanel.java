@@ -22,19 +22,6 @@ public class GenerationPanel extends JPanel {
             "  \"typ\": \"JWT\"\n" +
             "}";
 
-    public static final String PAYLOAD = "{\n" +
-            "  \"validated\": false,\n" +
-            "  \"id\": \"3FO4K4VY2B7V\",\n" +
-            "  \"locale\": null,\n" +
-            "  \"exp\": 1534676391,\n" +
-            "  \"k_id\": \"3FO4JMIQISR2\",\n" +
-            "  \"email\": \"disxiaofei@163.com\",\n" +
-            "  \"authorities\": [\n" +
-            "    \"ROLE_USER\"\n" +
-            "  ],\n" +
-            "  \"username\": \"yisa\"\n" +
-            "}";
-
 
     /**
      * Create the panel.
@@ -52,7 +39,6 @@ public class GenerationPanel extends JPanel {
         payloadTextArea = new JTextArea();
         payloadTextArea.setLineWrap(true);
         payloadTextArea.setWrapStyleWord(true);
-        payloadTextArea.setText(PAYLOAD);
         JScrollPane qScroller = new JScrollPane(payloadTextArea);
         qScroller.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         qScroller.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

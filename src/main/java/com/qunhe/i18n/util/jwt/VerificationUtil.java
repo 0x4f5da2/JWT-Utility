@@ -9,7 +9,7 @@ import java.util.Base64;
 import java.util.regex.Pattern;
 
 public class VerificationUtil {
-    private static final String tokenRegex = "^[a-zA-Z0-9+/]+\\.[a-zA-Z0-9+/]+\\.[a-zA-Z0-9+/_\\-]+$";
+    private static final String TOKENREGEX = "^[a-zA-Z0-9+/]+\\.[a-zA-Z0-9+/]+\\.[a-zA-Z0-9+/_\\-]+$";
 
     public static String getPayload(String string) {
         String result = null;
@@ -21,7 +21,7 @@ public class VerificationUtil {
     }
 
     public static boolean check(String token) {
-        return Pattern.matches(tokenRegex, token);
+        return Pattern.matches(TOKENREGEX, token);
     }
 
     public static boolean verify(String token, String secret) {

@@ -15,35 +15,13 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 public class GenerationUtil {
     public static String generate(String yamlString, String secret){
-        String ret = null;
-        try {
+        try{
+            String header = "{\"alg\":\"HS256\",\"typ\":\"JWT\"}";
+            String payload = JSON.toJSONString(new Yaml().load(yamlString));
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            Yaml yaml = new Yaml();
-            JWTCreator.Builder builder = JWT.create();
-            Map yamlMap = yaml.load(yamlString);
-            builder.with
-            ret = builder.withHeader(yamlMap).sign(algorithm);
+            return Signer.sign(header, payload, secret);
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return ret;
-    }
-
-    public static void testYaml(String yamlString) {
-        System.out.println(yamlString);
-        Yaml yaml = new Yaml();
-        Map res = yaml.load(yamlString);
-        for(Object each:res.keySet()){
-            String k = (String)each;
-            System.out.println(k);
-            Object val = res.get(each);
-            if(null != val) {
-                System.out.println(val.getClass());
-                val.toString();
-            } else {
-                System.out.println("null");
-            }
+            return null;
         }
     }
 }
