@@ -1,16 +1,14 @@
 # JWT Utility
 
-## 界面
+## User Interface
 
 ![](./img/interface1.png)
 
 
-## 功能
+## Functionality
 
-* 通过给定的secret验证JWT是否合法
+* Validate a given JWT
 
-* 解析并显示JWT中的payload
+* Decrypt the payload of a JWT
 
-* 使用给定的payload以及secret生成JWT
-
-* 目前以上功能只能使用HS256加密算法
+* Generate a JWT using given payload and secret
