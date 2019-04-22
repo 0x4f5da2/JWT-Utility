@@ -15,18 +15,6 @@ public class ResultGui extends JDialog {
 
 
     private JTextArea textArea;
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        try {
-            ResultGui dialog = new ResultGui();
-            dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-            dialog.setVisible(true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Create the dialog.
